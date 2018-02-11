@@ -1,0 +1,19 @@
+{
+  "name": "exersize_tracker",
+  "version": "1.0.0",
+  "description": "An app that tracks your exersize plan",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johnkelley4477/exersize_traker.git"
+  },
+  "author": "Cameron thomas songhurst kelley",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/johnkelley4477/exersize_traker/issues"
+  },
+  "homepage": "https://github.com/johnkelley4477/exersize_traker#readme"
+}
