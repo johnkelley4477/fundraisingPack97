@@ -1,0 +1,28 @@
+<h3>{{exercise}}</h3>
+<canvas id="canvas_{{@index}}"></canvas>
+<input type="button" id="table_btn_{{@index}}" class="btn" value="show data"/>
+<table id="table_{{@index}}" class="data_table">
+	<thead>
+		<tr>
+			<th>Date</th>
+			<th>Reps</th>
+			<th>Duration</th>
+		</tr>
+	</thead>
+	<tbody>
+		{{#each data}}
+			<tr>
+				<td>{{this.date}}</td>
+				<td>{{this.reps}}</td>
+				<td>{{this.time}}</td>
+			</tr>
+		{{/each}}
+	</tbody>
+</table>
+<script type="text/javascript">
+	var labels = [{{#each data}}'{{{this.date}}}',{{/each}}],
+			data = [{{#each data}}'{{{this.reps}}}',{{/each}}],
+			exercise = "{{exercise}}";
+	progress.showTable({{@index}});
+	progress.drawChart({{@index}},data,labels);
+</script>

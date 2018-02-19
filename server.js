@@ -1,9 +1,7 @@
 'use strict';
 
 const Hapi = require('hapi'),
-	MongoClient = require('mongodb').MongoClient,
-	ObjectId = require('mongodb').ObjectId,
-	url = "mongodb://192.168.1.23:12001/workoutsDB";
+	db = require('./handlers/databaseFuncs');
 
 const server = new Hapi.Server();
 
@@ -33,12 +31,33 @@ server.route({
 	}
 });
 
+//route to progress
+server.route({
+	method:"POST",
+	path:"/exercisetracker/progress",
+	handler: (request,reply) => {
+		db.databaseFuncs.postWorkoutData(request.payload,function(err,msg){
+			//const data = request.payload;
+			return reply.view('progress',msg);
+		});
+	}
+});
+
 //route to css
 server.route({
 	method:'GET',
 	path:'/css/{css}',
 	handler:(request,reply)=>{
 		return reply.file(`./css/${request.params.css}`);
+	}
+});
+
+//route to js
+server.route({
+	method:'GET',
+	path:'/js/{js}',
+	handler:(request,reply)=>{
+		return reply.file(`./js/${request.params.js}`);
 	}
 });
 
