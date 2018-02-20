@@ -17,8 +17,9 @@ const colorsBK = [
 	];
 const progress = {
 	"drawChart":(i,data,labels)=>{
-		var ctx = $("#canvas_" + i)[0].getContext('2d'),
-			chart = new Chart(ctx,{
+		const ctx = $("#canvas_" + i)[0].getContext('2d');
+		ctx.height = 500;
+		const chart = new Chart(ctx,{
 				type:'line',
 				data:{
 					labels:labels,
@@ -29,7 +30,10 @@ const progress = {
 			            data: data
 			        }]
 				},
-				options:{}
+				options:{
+					responsive: true, 
+					maintainAspectRatio: false
+				}
 			});
 	},
 	"showTable":(i)=>{

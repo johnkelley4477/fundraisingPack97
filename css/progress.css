@@ -1,0 +1,21 @@
+table{
+	display: none;
+	width: 400px;
+	text-align: center;
+	margin:auto;
+	font-size: 14pt;
+}
+h3{
+	font-size: 18pt;
+	text-transform: capitalize;
+}
+.canvas_container{
+	height: 300px
+}
+.btn{
+	font-size: 12pt;
+	padding: 5px;
+}
+.execise_container{
+	margin-bottom: 40px;
+}

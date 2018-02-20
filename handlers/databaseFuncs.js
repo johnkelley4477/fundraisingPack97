@@ -36,7 +36,7 @@ const databaseFuncs = {
 		// MongoClient.connect(url, function(err, db) {
 		//   if (err) throw err;
 
-		//   db.collection("workouts").insertOne(data, function(err, res) {
+		//   db.collection("exercisetracker").insertOne(data, function(err, res) {
 		//     if (err) throw err;
 		//     if(res.result.ok === 1){
 		    	

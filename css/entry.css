@@ -4,10 +4,10 @@
 }
 #enter{
 	font-size: 15pt;
-   /* margin-left: 47px;*/
+    margin-left: 47px;
 }
 
-/*form input {
+form input {
     margin-left: 45px;
     margin-bottom: 15px;
     width:254px;
@@ -18,4 +18,4 @@ form label {
 .container{
 	width:400px;
 	margin: auto;
-}*/
+}
