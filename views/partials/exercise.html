@@ -25,8 +25,13 @@
 </div>
 <script type="text/javascript">
 	var labels = [{{#each data}}'{{{this.date}}}',{{/each}}],
-			data = [{{#each data}}'{{{this.reps}}}',{{/each}}],
+			reps = [{{#each data}}'{{{this.reps}}}',{{/each}}],
+			time = [{{#each data}}'{{{this.time}}}',{{/each}}],
 			exercise = "{{exercise}}";
 	progress.showTable({{@index}});
+	var data = reps;
+	if(data[0] === "1"){
+		data = time;
+	}
 	progress.drawChart({{@index}},data,labels);
 </script>
