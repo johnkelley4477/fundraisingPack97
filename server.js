@@ -26,7 +26,7 @@ server.route({
 	method:"GET",
 	path:"/exercisetracker/newentry",
 	handler: (request,reply) => {
-		const data = {};
+		const data = {"start":true};
 		return reply.view('exercise_input',data);
 	}
 });
@@ -34,14 +34,39 @@ server.route({
 //route to progress
 server.route({
 	method:"POST",
-	path:"/exercisetracker/progress",
+	path:"/exercisetracker/newentry",
 	handler: (request,reply) => {
 		db.databaseFuncs.postWorkoutData(request.payload,function(err,msg){
-			//const data = request.payload;
+			let data = {"successful":true};
+			if(err){
+				data = {"successful":false};
+			}
+			return reply.view('exercise_input',data);
+		});
+	}
+});
+
+//route to progress
+server.route({
+	method:"GET",
+	path:"/exercisetracker/progress",
+	handler: (request,reply) => {
+		db.databaseFuncs.getAllExercisesSorted(function(err,msg){
 			return reply.view('progress',msg);
 		});
 	}
 });
+
+// //route to progress
+// server.route({
+// 	method:"POST",
+// 	path:"/exercisetracker/progress",
+// 	handler: (request,reply) => {
+// 		db.databaseFuncs.postWorkoutData(request.payload,function(err,msg){
+// 			return reply.view('progress',msg);
+// 		});
+// 	}
+// });
 
 //route to css
 server.route({

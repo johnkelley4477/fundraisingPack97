@@ -17,50 +17,33 @@ const MongoClient = require('mongodb').MongoClient,
 		{"exercise":"situps","date":"2018-02-01","reps":"28","time":"1"},
 		{"exercise":"situps","date":"2018-02-02","reps":"28","time":"1"},
 		{"exercise":"situps","date":"2018-02-03","reps":"29","time":"1"}
-	],
-	kill = {"exercises":[
-	{"exercise":"pullups",
-	"data":[
-		{"date":"2018-02-01","reps":"8","time":"1"},
-		{"date":"2018-02-02","reps":"8","time":"1"},
-		{"date":"2018-02-03","reps":"9","time":"1"}
-	]},
-	{"exercise":"pushups",
-	"data":[
-		{"date":"2018-02-01","reps":"28","time":"1"},
-		{"date":"2018-02-02","reps":"28","time":"1"},
-		{"date":"2018-02-03","reps":"29","time":"1"}
-	]},
-	{"exercise":"planks",
-	"data":[
-		{"date":"2018-02-01","reps":"1","time":"1.25"},
-		{"date":"2018-02-02","reps":"1","time":"1.25"},
-		{"date":"2018-02-03","reps":"1","time":"1.27"}
-	]},
-	{"exercise":"situps",
-	"data":[
-		{"date":"2018-02-01","reps":"28","time":"1"},
-		{"date":"2018-02-02","reps":"28","time":"1"},
-		{"date":"2018-02-03","reps":"29","time":"1"}
-	]}
-]};
+	];
 
 const databaseFuncs = {
 	postWorkoutData: (data,callback)=>{
-		const killdata = databaseFuncs.normalizeResponce(killMeToo);
-		callback(null,killdata);
-		// MongoClient.connect(url, function(err, db) {
-		//   if (err) throw err;
+		//const killdata = databaseFuncs.normalizeResponce(killMeToo);
+		//callback(null,killdata);
+		MongoClient.connect(url, function(err, db) {
+		  if (err) throw err;
 
-		//   db.collection("exercisetracker").insertOne(data, function(err, res) {
-		//     if (err) throw err;
-		//     if(res.result.ok === 1){
-		    	
-		//     	callback(null,res.ops[0]);
-		//     }
-		//     db.close();
-		//   });
-		// });
+		  db.collection("exercisetracker").insertOne(data, function(err, res) {
+		    if (err) throw err;
+		    if(res.result.ok === 1){
+		    	callback(null,res.ops[0]);
+		    }
+		    db.close();
+		  });
+		});
+	},
+	getAllExercisesSorted: (callback)=>{
+		MongoClient.connect(url, function(err, db) {
+		  if (err) throw err;
+		  db.collection("exercisetracker").find({}).sort({ttext:1}).toArray(function(err, result) {
+		    if (err) throw err;
+		    callback(null,databaseFuncs.normalizeResponce(result));
+		    db.close();
+		  });
+		});
 	},
 	normalizeResponce: (data)=>{
 		let exercises = {"exercises":[]};
@@ -68,20 +51,20 @@ const databaseFuncs = {
 		let exercise = {};
 		let dat = [];
 		data.forEach((value)=>{
-			if (currentExercise !== value.exercise){
+			if (currentExercise !== value.ttext){
 				if(currentExercise !== ""){
 					exercise["data"] = dat;
 					exercises.exercises.push(exercise);
 					exercise = {};
 					dat = [];
 				}
-				exercise["exercise"] = value.exercise;
-				currentExercise = value.exercise;
+				exercise["exercise"] = value.ttext;
+				currentExercise = value.ttext;
 			}
 			var dataObj = {};
-			dataObj["date"] = value.date;
+			dataObj["date"] = value.edate;
 			dataObj["reps"] = value.reps;
-			dataObj["time"] = value.time;
+			dataObj["time"] = value.dur;
 			dat.push(dataObj);
 		});
 		exercise["data"] = dat;

@@ -1,6 +1,12 @@
 <link rel="stylesheet" type="text/css" href="/css/entry.css">
-
-<form action="/exercisetracker/progress" method="POST">
+{{#unless start}}
+	{{#if successful}}
+		<div class="success">Your Exersice was recorded</div>
+	{{else}}
+		<div class="fail">Your Exersice was not recorded</div>
+	{{/if}}
+{{/unless}}
+<form action="/exercisetracker/newentry" method="POST">
 	<label for="edate">Date</label>
 	<input type="date" name="edate" id="date" class="inputs">
 	<label for="ttext">Type</label>
@@ -8,7 +14,7 @@
 	<label for="reps">Reps</label>
 	<input type="number" name="reps" id="reps" class="inputs">
 	<label for="dur">Duration</label>
-	<input type="number" name="dur" id="dur" class="inputs">
+	<input type="text" name="dur" id="dur" class="inputs">
 	<input type="submit" class="btn" id="enter">
 </form>
 

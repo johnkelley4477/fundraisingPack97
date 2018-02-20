@@ -10,7 +10,7 @@
 form input {
     margin-left: 45px;
     margin-bottom: 15px;
-    width:254px;
+    width:348px;
 }
 form label {
 	font-weight: bold;
@@ -18,4 +18,20 @@ form label {
 .container{
 	width:400px;
 	margin: auto;
+}
+.success {
+    border: #0a0 2px double;
+    text-align: center;
+    padding: 2px;
+    margin-bottom: 10px;
+    color: #050;
+    background-color: #0f0;
+}
+.failed {
+    border: #a00 2px double;
+    text-align: center;
+    padding: 2px;
+    margin-bottom: 10px;
+    color: #500;
+    background-color: #f00;
 }
