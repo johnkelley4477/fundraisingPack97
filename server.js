@@ -36,7 +36,7 @@ server.route({
 	method:"POST",
 	path:"/exercisetracker/newentry",
 	handler: (request,reply) => {
-		db.databaseFuncs.postWorkoutData(request.payload,function(err,msg){
+		db.databaseFuncs.postWorkoutData(request.payload,(err,msg)=>{
 			let data = {"successful":true};
 			if(err){
 				data = {"successful":false};
@@ -51,12 +51,22 @@ server.route({
 	method:"GET",
 	path:"/exercisetracker/progress",
 	handler: (request,reply) => {
-		db.databaseFuncs.getAllExercisesSorted(function(err,msg){
+		db.databaseFuncs.getAllExercisesSorted((err,msg)=>{
 			return reply.view('progress',msg);
 		});
 	}
 });
 
+//route to delete a collection
+server.route({
+	method:"GET",
+	path:"/exercisetracker/deletecollection/{id}",
+	handler: (request,reply)=>{
+		db.databaseFuncs.removeCollection(request.params.id,(err,msg)=>{
+			reply().redirect('/exercisetracker/progress');
+		});
+	}
+});
 // //route to progress
 // server.route({
 // 	method:"POST",

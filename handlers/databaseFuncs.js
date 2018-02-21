@@ -1,7 +1,7 @@
 'use strict';
 
 const MongoClient = require('mongodb').MongoClient,
-	ObjectId = require('mongodb').ObjectId,
+	mongodb = require('mongodb'),
 	url = "mongodb://192.168.1.23:12001/workoutsDB",
 	killMeToo = [
 		{"exercise":"pullups","date":"2018-02-01","reps":"8","time":"1"},
@@ -45,6 +45,15 @@ const databaseFuncs = {
 		  });
 		});
 	},
+	removeCollection: (id,callback)=>{
+		MongoClient.connect(url, function(err, db) {
+			db.collection("exercisetracker", function(err, collection){
+				if (err) callback(err);
+				collection.deleteOne({_id: new mongodb.ObjectId(id)});
+				callback(null,'success');
+			});
+		});
+	},
 	normalizeResponce: (data)=>{
 		let exercises = {"exercises":[]};
 		let currentExercise = "";
@@ -65,6 +74,7 @@ const databaseFuncs = {
 			dataObj["date"] = value.edate;
 			dataObj["reps"] = value.reps;
 			dataObj["time"] = value.dur;
+			dataObj["id"] = value._id;
 			dat.push(dataObj);
 		});
 		exercise["data"] = dat;

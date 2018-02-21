@@ -10,6 +10,7 @@
 				<th>Date</th>
 				<th>Reps</th>
 				<th>Duration</th>
+				<th>Delete</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -18,6 +19,7 @@
 					<td>{{this.date}}</td>
 					<td>{{this.reps}}</td>
 					<td>{{this.time}}</td>
+					<td><a class="red" href="/exercisetracker/deletecollection/{{this.id}}">X</a></td>
 				</tr>
 			{{/each}}
 		</tbody>
