@@ -35,3 +35,10 @@ form label {
     color: #500;
     background-color: #f00;
 }
+#progress{
+	font-size: 14pt;
+	background-color: #050;
+    margin-bottom: 15px;
+    width: 348px;
+    margin-left: 46px;
+}
