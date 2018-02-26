@@ -54,6 +54,21 @@ const databaseFuncs = {
 			});
 		});
 	},
+	getUniqueRoutes: (callback)=>{
+		var result = "failed"
+		MongoClient.connect(url, function(err, db) {
+		 	if (err) throw err;
+		 	
+		 	db.collection("exercisetracker").distinct("ttext",{},(function(err, docs){
+		        if(err){
+		            callback(err);
+		        }
+		        if(docs){  
+		        	callback(null,docs);
+		        }
+	   		}));
+		});
+	},
 	normalizeResponce: (data)=>{
 		let exercises = {"exercises":[]};
 		let currentExercise = "";
