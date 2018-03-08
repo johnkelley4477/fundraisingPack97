@@ -52,4 +52,29 @@ const entry = {
 $(document).ready(()=>{
 	entry.today()
 	entry.mapProgressButton;
+	let cnt = "";
+	$('#stop_clock').on('click',()=>{
+		entry.stopClock("#dur");
+		$('#clocks').hide();
+		$('#stop').show();
+	});
+	$("#timer").on('click',()=>{
+		cnt = $('#dur').val();
+		if(cnt == ""){
+			$('#dur').attr("placeholder","Enter time here in seconds");
+		}else{
+			entry.countdownTimer('#dur',cnt);
+			$('#clocks').hide();
+			$('#stop').show();
+		}
+		
+	});
+	$("#stop").on('click',()=>{
+		entry.stop();
+		if(cnt != ""){
+			$('#dur').val(cnt);
+		}
+		$('#clocks').show();
+		$('#stop').hide();
+	});
 });

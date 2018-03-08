@@ -78,6 +78,15 @@ server.route({
 // 	}
 // });
 
+//route to images
+server.route({
+	method:'GET',
+	path:'/images/{images}',
+	handler:(request,reply)=>{
+		return reply.file(`./images/${request.params.images}`);
+	}
+});
+
 //route to css
 server.route({
 	method:'GET',
