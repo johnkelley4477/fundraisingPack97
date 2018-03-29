@@ -2,6 +2,7 @@
 
 const Hapi = require('hapi');
 const server = new Hapi.Server();
+const tempData = require('./handlers/tempdata');
 
 server.register([require('vision'),require('inert')], (err) => {
 
@@ -19,6 +20,23 @@ server.register([require('vision'),require('inert')], (err) => {
 
 server.connection({ port: 3001, host: '0.0.0.0' });
 
+server.route({
+	method:'GET',
+	path:'/fundraising/items',
+	handler:(request,reply)=>{
+		const data = {"items":tempData.data.items};
+		return reply.view('items',data);
+	}
+});
+
+server.route({
+	method:'POST',
+	path:'/fundraising/items/new',
+	handler:(request,reply)=>{
+		const data = {"items":tempData.data.items};
+		return reply.view('items',data);
+	}
+});
 
 //route to css
 server.route({
@@ -44,5 +62,4 @@ server.start((err) => {
         throw err;
     }
     console.log(`Server running at: ${server.info.uri}`);
-<!DOCTYPE html>
 });
