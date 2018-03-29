@@ -52,6 +52,12 @@ body{
 .grid75{
 	width:75%;
 }
+.left{
+	float:left;
+}
+.right{
+	float:right;
+}
 header{
 	background-image: url(http://www.cubscoutpack97.org/images/NewHeaderBlue8.png);
 	background-position: left;

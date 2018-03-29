@@ -20,6 +20,17 @@ server.register([require('vision'),require('inert')], (err) => {
 
 server.connection({ port: 3001, host: '0.0.0.0' });
 
+//route to main page
+server.route({
+    method:'GET',
+    path:'/fundraising',
+    handler:(request,reply)=>{
+        const data = {};
+        return reply.view('main',data);
+    }
+});
+
+//route to item management page
 server.route({
 	method:'GET',
 	path:'/fundraising/items',
@@ -29,6 +40,7 @@ server.route({
 	}
 });
 
+//ad new item
 server.route({
 	method:'POST',
 	path:'/fundraising/items/new',
