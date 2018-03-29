@@ -14,7 +14,7 @@
 .item_row {
     border-bottom: 1px solid #333;
 }
-#item_del{
+.item_del{
 	color:#f00;
 }
 #pic_label{
@@ -33,7 +33,9 @@
 #new_item{
 	border-right: 1px solid #333;
     min-width: 225px;
+    margin-left: 10px;
 }
 #list_item{
 	min-width: 500px;
+    margin-right: 10px;
 }
