@@ -1,0 +1,39 @@
+.new_item_form {
+    display: block;
+    font-size: 14pt;
+    margin: auto;
+    margin-bottom: 15px;
+    width: 200px;
+}
+#items_table{
+    width: 100%;
+    text-align: center;
+    font-size: 14pt;
+    border-collapse: collapse;
+}
+.item_row {
+    border-bottom: 1px solid #333;
+}
+#item_del{
+	color:#f00;
+}
+#pic_label{
+	display: block;
+    background-color: #0b0;
+    color: #fff;
+    font-size: 14pt;
+    padding: 10px;
+    width: 200px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+#pic{
+	display: none;
+}
+#new_item{
+	border-right: 1px solid #333;
+    min-width: 225px;
+}
+#list_item{
+	min-width: 500px;
+}

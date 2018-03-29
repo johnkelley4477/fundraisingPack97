@@ -1,0 +1,24 @@
+<table id="items_table">
+	<thead>
+		<tr class='item_row'>
+			<th>id</th>
+			<th>Name</th>
+			<th>Cost</th>
+			<th>Retail</th>
+			<th>Description</th>
+			<th>Delete</th>
+		</tr>
+	</thead>
+	<tbody>
+		{{#each items}}
+			<tr class='item_row'>
+				<td class='item_id'>{{id}}</td>
+				<td class='item_name'>{{name}}</td>
+				<td class='item_cost'>{{cost}}</td>
+				<td class='item_price'>{{price}}</td>
+				<td class='item_desc'>{{desc}}</td>
+				<td class='item_del'>X</td>
+			</tr>
+		{{/each}}
+	</tbody>	
+</table>
