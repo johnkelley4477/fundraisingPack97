@@ -1,0 +1,22 @@
+<link rel="stylesheet" type="text/css" href="/css/orders.css">
+<form class="placeorder_form" method="POST" action="/order/submit">
+	<div class="scout_info">
+		<label for="scout">Scout: </label>
+		<select name="scout" id="scout">
+			<option value="" selected>Choose a Scout</option>
+			{{#each scouts}}
+				<option value="{{id}}">{{name}}</option>
+			{{/each}}
+		</select>
+		<label for="note">Purchaser: </label>
+		<input type="text" name="note" id="note" placeholder="name, address, etc"/>
+	</div>
+	{{#each items}}
+		{{>orderlineitem @this}}
+	{{/each}}
+</form>
+<div class="total_container">
+	<label>Your subtotal is: $<span id="sub_total"></span></label>
+	<input type="submit" class="btn">
+</div>
+<script type="text/javascript" src="/js/placeorder.js"></script>

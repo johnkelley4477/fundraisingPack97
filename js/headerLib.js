@@ -21,10 +21,10 @@ $(".item84").on('click',() => {
 //Bind menu items
 //bind home menu buttons
 $("#mm .item0").on('touchstart click',() => {window.location = '/fundraising'});
-//bind Program Overview menu buttons
+//bind Item Management menu buttons
 $("#mm .item1").on('touchstart click',() => {window.location = '/fundraising/items'});
-//bind Pack menu nCommittee buttons
-
+//bind Place Order menu buttons
+$("#mm .item1").on('touchstart click',() => {window.location = '/fundraising/placeorder'});
 //Add headers where needed
 
 //Leaders page

@@ -1,0 +1,59 @@
+.placeorder_form{
+	min-height:1200px;
+    height: 100%;
+}
+.item_selectable{
+	height:350;
+	min-width: 200px;
+	float:left;
+}
+.scout_info{
+	max-width:600px;
+	margin: auto;
+}
+.scout_info label{
+	color:#555;
+}
+.scout_info input, .scout_info select{
+	font-size: 14pt;
+	width:200px;
+	margin: 10px;
+}
+.item_info {
+    background-color: rgba(255,255,255,0.9);
+    height: 200px;
+    /*position: absolute;*/
+    width: 100%;
+    font-size: 14pt;
+    /*display: none;*/
+}
+.item_info label {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+}
+input.quantity {
+    width: 60px;
+    margin-top: 10px;
+    margin-left: 40%;
+    font-size: 14pt;
+}
+.item_img{
+    width:200px;
+    margin: auto;
+}
+.total_container {
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+    padding-top: 10px;
+    text-align: center;
+    background-color: rgba(255,255,255,0.8);
+    font-size: 18pt;
+}
+.total_container input.btn {
+    float: right;
+    margin-right: 10px;
+    font-size: 18pt;
+}

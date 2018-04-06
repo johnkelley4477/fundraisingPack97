@@ -30,6 +30,16 @@ server.route({
     }
 });
 
+//route to place order page
+server.route({
+    method:'GET',
+    path:'/fundraising/placeorder',
+    handler:(request,reply)=>{
+        const data = {"scouts":tempData.data.scouts,"items":tempData.data.items};
+        return reply.view('placeorder',data);
+    }
+});
+
 //route to item management page
 server.route({
 	method:'GET',
