@@ -1,0 +1,14 @@
+<form method="POST" action="/fundraising/items/new">
+	<input type="text" name="id" class="hide" id="id"/>
+	<label for="name">Name</label>
+	<input type="text" name="name" class="new_item_form" id="name" placeholder="Item Name"/>
+	<label for="cost">Cost</label>
+	<input type="text" name="cost" class="new_item_form" id="cost" placeholder="Our cost"/>
+	<label for="price">Price</label>
+	<input type="text" name="price" class="new_item_form" id="price" placeholder="Retail Price"/>
+	<label for="desc">Description</label>
+	<textarea row="4" col="30" name="desc" class="new_item_form" id="desc" placeholder="A few words describing the item"></textarea>
+	<label id="pic_label" class="new_item_form" for="pic">Add Image</label>
+	<input type="file" class="new_item_form" id="pic" name="pic" accept="image/*">
+	<input class="btn" type="submit"/>
+</form>
