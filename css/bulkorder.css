@@ -1,0 +1,21 @@
+form table {
+    width: 90%;
+    margin: auto;
+    text-align: center;
+    border-collapse: collapse;
+}
+tr {
+    border-bottom: 1px solid #555;
+}
+td {
+    padding: 5px;
+}
+input{
+	text-align: center;
+	font-size: 12pt;
+}
+input.btn{
+	float:right;
+	font-size: 18pt;
+	margin: 20px;
+}

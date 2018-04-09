@@ -1,0 +1,35 @@
+<link rel="stylesheet" type="text/css" href="/css/bulkorder.css">
+<h1>Bulk Order</h1>
+<form>
+	<table>
+		<thead>
+			<tr>
+				<td>ID</td>
+				<td>Name</td>
+				<td>Cost</td>
+				<td>QTY</td>
+				<td>Total</td>
+			</tr>
+		</thead>
+		<tbody>
+			{{#each items}}
+				<tr>
+					<td>{{id}}</td>
+					<td>{{name}}</td>
+					<td class="cost">{{cost}}</td>
+					<td><input type="text" class="quantity"></td>
+					<td>$<span class="total">0</span></td>
+				</tr>
+			{{/each}}
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td>Total:</td>
+				<td>$<span id="sub_total">0</span></td>
+			</tr>
+		</tbody>
+	</table>
+	<input type="submit" class="btn">
+</form>
+<script type="text/javascript" src="/js/bulkorder.js"></script>
