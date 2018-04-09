@@ -40,6 +40,15 @@ server.route({
     }
 });
 
+server.route({
+    method:'GET',
+    path:'/fundraising/bulkorder',
+    handler:(request,reply)=>{
+        const data = {"items":tempData.data.items};
+        return reply.view('bulkorder',data);
+    }
+});
+
 //route to item management page
 server.route({
 	method:'GET',
