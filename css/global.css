@@ -58,6 +58,12 @@ body{
 .right{
 	float:right;
 }
+.light-gray{
+	background-color: #DDD;
+}
+.no_border{
+	border: none;
+}
 header{
 	background-image: url(http://www.cubscoutpack97.org/images/NewHeaderBlue8.png);
 	background-position: left;
