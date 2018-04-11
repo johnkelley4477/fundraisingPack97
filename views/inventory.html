@@ -1,0 +1,40 @@
+<link rel="stylesheet" type="text/css" href="/css/bulkorder.css">
+<h1>Inventory</h1>
+
+<form>
+	<table>
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Name</th>
+				<th>Box Qty</th>
+				<th>Cost</th>
+				<th>Total Qty</th>
+				<th>Boxes</th>
+				<th>Loose</th>
+			</tr>
+		</thead>
+		<tbody>
+			{{#inventorycalc inventory}}
+				<tr>
+					<td class="light-gray">{{@id}}</td>
+					<td class="light-gray">{{@name}}</td>
+					<td class="light-gray">{{@in_box}}</td>
+					<td class="cost light-gray">${{@cost}}</td>
+					<td>{{@count}}</td>
+					<td>{{@boxes}}</td>
+					<td>{{@loose}}</td>
+				</tr>
+			{{/inventorycalc}}
+			<tr class="no_border">
+				<td></td>
+				<td></td>
+				<th>Total:</th>
+				<th>${{@total_sum}}</th>
+				<th>{{@total_count}}</th>
+				<th>{{@total_boxes}}</th>
+				<th>{{@total_loose}}</th>
+			</tr>
+		</tbody>
+	</table>
+</form>

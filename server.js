@@ -59,6 +59,16 @@ server.route({
 	}
 });
 
+//route to inventory management page
+server.route({
+    method:'GET',
+    path:'/fundraising/inventory',
+    handler:(request,reply)=>{
+        const data = {"inventory":tempData.data.inventory};
+        return reply.view('inventory',data);
+    }
+});
+
 //ad new item
 server.route({
 	method:'POST',

@@ -24,9 +24,11 @@ $("#mm .item0").on('touchstart click',() => {window.location = '/fundraising'});
 //bind Item Management menu buttons
 $("#mm .item1").on('touchstart click',() => {window.location = '/fundraising/items'});
 //bind Place Order menu buttons
-$("#mm .item2").on('touchstart click',() => {window.location = '/fundraising/placeorder'});
+$("#mm .item2").on('touchstart click',() => {window.location = '/fundraising/inventory'});
 //bind Place Order menu buttons
-$("#mm .item3").on('touchstart click',() => {window.location = '/fundraising/bulkorder'});
+$("#mm .item3").on('touchstart click',() => {window.location = '/fundraising/placeorder'});
+//bind Place Order menu buttons
+$("#mm .item4").on('touchstart click',() => {window.location = '/fundraising/bulkorder'});
 //Add headers where needed
 
 //Leaders page
