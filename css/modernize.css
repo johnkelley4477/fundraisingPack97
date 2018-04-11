@@ -179,6 +179,8 @@ input#mod_search_searchword{
 	text-align: center;
 	border: #026 1px solid;
 	border-style: none solid none none;
+    -webkit-transition: left 1s; /* Safari */
+    transition: left 1s;
 }
 .main_menu li{
   	font-size:17px;

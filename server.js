@@ -40,6 +40,7 @@ server.route({
     }
 });
 
+//route to bulk order
 server.route({
     method:'GET',
     path:'/fundraising/bulkorder',
@@ -66,6 +67,16 @@ server.route({
     handler:(request,reply)=>{
         const data = {"inventory":tempData.data.inventory};
         return reply.view('inventory',data);
+    }
+});
+
+//route to intake page
+server.route({
+    method:'GET',
+    path:'/fundraising/intake',
+    handler:(request,reply)=>{
+        const data = {"items":tempData.data.items};
+        return reply.view('intake',data);
     }
 });
 

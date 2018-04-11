@@ -1,0 +1,13 @@
+<link rel="stylesheet" type="text/css" href="/css/intake.css">
+<h1>Item Intake</h1>
+<form class="intake_form">
+	<select class="items">
+		<option>Select an item</option>
+		{{#each items}}
+			<option value="{{id}}">{{name}}</option>
+		{{/each}}
+	</select>
+	<input type="number" name="boxes" placeholder="Boxes"/>
+	<input type="number" name="loose"  placeholder="Loose"/>
+	<input type="submit" class="btn">
+</form>

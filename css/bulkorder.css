@@ -19,3 +19,8 @@ input.btn{
 	font-size: 18pt;
 	margin: 20px;
 }
+.intake {
+    width: 100px;
+    float: right;
+    margin: 40px;
+}

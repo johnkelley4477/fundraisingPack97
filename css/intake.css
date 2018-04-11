@@ -1,0 +1,19 @@
+.intake_form {
+	min-width: 320px;
+	width:400px;
+	margin: auto;
+}
+.intake_form select, .intake_form input:not(.btn){
+	display: block;
+	margin-bottom: 10px;
+	font-size: 18pt;
+	min-width: 320px;
+	width:100%;	
+	text-align: center;
+	height:35px;
+	max-height:35px;
+}
+.btn{
+	width:100%;
+	font-size: 18pt;
+}
