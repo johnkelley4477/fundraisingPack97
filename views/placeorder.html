@@ -10,13 +10,15 @@
 		</select>
 		<label for="note">Purchaser: </label>
 		<input type="text" name="note" id="note" placeholder="name, address, etc"/>
+		<input type="text" name="user" id="user" class="hide" value="78965523"/>
 	</div>
 	{{#each items}}
 		{{>orderlineitem @this}}
 	{{/each}}
+	<div class="total_container">
+		<label>Your subtotal is: $<span id="sub_total"></span></label>
+		<input type="submit" class="btn">
+	</div>
 </form>
-<div class="total_container">
-	<label>Your subtotal is: $<span id="sub_total"></span></label>
-	<input type="submit" class="btn">
-</div>
+
 <script type="text/javascript" src="/js/placeorder.js"></script>

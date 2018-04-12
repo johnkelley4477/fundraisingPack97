@@ -80,6 +80,18 @@ server.route({
     }
 });
 
+//submit an order
+server.route({
+    method:'POST',
+    path:'/order/submit',
+    handler:(request,reply)=>{
+        let data = request.payload;
+        data["timestamp"] = new Date();
+        console.log(data);
+        return reply.view('ordersummery',data);
+    }
+});
+
 //ad new item
 server.route({
 	method:'POST',
