@@ -21,7 +21,7 @@ const databaseFuncs = {
 	getAllExercisesSorted: (callback)=>{
 		MongoClient.connect(url, function(err, db) {
 		  if (err) throw err;
-		  db.collection("exercisetracker").find({}).sort({ttext:1}).toArray(function(err, result) {
+		  db.collection("exercisetracker").find({}).sort({ttext:1, edate: 1}).toArray(function(err, result) {
 		    if (err) throw err;
 		    callback(null,databaseFuncs.normalizeResponce(result));
 		    db.close();
