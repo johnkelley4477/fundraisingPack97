@@ -2,7 +2,7 @@
 
 const MongoClient = require('mongodb').MongoClient,
 	mongodb = require('mongodb'),
-	url = "mongodb://192.168.1.23:27017/workoutsDB";
+	url = "mongodb://192.168.1.23:9999/workoutsDB";
 
 const databaseFuncs = {
 	postWorkoutData: (data,callback)=>{
